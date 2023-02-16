@@ -17,7 +17,7 @@ int main()
     {
         for (j = 0; j < 3; j++)
         {
-            printf("%lf\t", arr[i][j]);
+            printf("%2g\t\t", arr[i][j]);
         }
         printf("\n");
     }
@@ -27,7 +27,7 @@ int main()
     glavD = arr[0][0] + arr[1][1] + arr[2][2];
     pobD = arr[0][2] + arr[1][1] + arr[2][0];
 
-    printf("Sum - Main dig: %lf\nSum - Poboch dig: %lf\n", glavD, pobD);
+    printf("Sum - Main dig: %g\nSum - Poboch dig: %g\n", glavD, pobD);
 
     int arr1[2][2];
 

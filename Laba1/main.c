@@ -1,46 +1,36 @@
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
-#include<fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-int ch, inWord = 0, wordsCount = 0, y = 0, x = 0;
-char arr[2000][25];
-main()
+int main()
 {
-    FILE* file = fopen("C:/proga/file.txt", "r");
-    if (file == NULL)
+    int a, b, c, D;
+    double x1 ,x2;
+
+    printf("Zadayte parametri function (a*x^2+b*x+c):\na = ");
+    scanf("%d", &a);
+    printf("b = ");
+    scanf("%d", &b);
+    printf("c = ");
+    scanf("%d", &c);
+
+    D = pow(b, 2) - 4 * a * c;
+
+    if (D > 0)
     {
-        printf("Error read file!");
+        x1 = (-b + sqrt(D)) / (2 * a);
+        x2 = (-b - sqrt(D)) / (2 * a);
+        printf("Korni:\nx1 = %g, x2 = %g\n", x1, x2);
+    }
+    else if (D == 0)
+    {
+        x1 = (-b + sqrt(D)) / (2 * a);
+        printf("Koren:\nx1 = %g\n", x1);
     }
     else
     {
-        while ((ch = fgetc(file)) != EOF)
-        {
-            if (isspace(ch) || ispunct(ch) || isdigit(ch))
-            {
-                if (inWord)
-                {
-                    wordsCount++;
-                    inWord = 0;
-                    y++;
-                    x = 0;
-                }
-            }
-            else
-            {
-                inWord = 1;
-                arr[y][x] = ch;
-                x++;
-            }
-        }
-
-        wordsCount += inWord;
-        printf("Count word: %d\n", wordsCount);
-        
-        int i;
-        for ( i = 0; i < wordsCount; i++)
-        {
-            printf("%4d) %s\n", (i + 1), arr[i]);
-        }
+        printf("Net kornei, t.k. D otricatelniy!\n");
     }
+
+    return 0;
 }
