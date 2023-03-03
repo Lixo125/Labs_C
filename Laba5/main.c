@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int i, j, k;
+
 void read_arr(double *arr, int n)
 {
-    for (int i = 0; i < n * n; i++)
+    for (i = 0; i < n * n; i++)
         scanf("%lf", &arr[i]);
 }
 
 void print_arr(double *arr, int n)
 {
-    for (int i = 0; i < n * n; i++)
+    for (i = 0; i < n * n; i++)
     {
         printf("%3g\t ", arr[i]);
         if ((i + 1) % n == 0)
@@ -20,7 +22,7 @@ void print_arr(double *arr, int n)
 double* plus_arr(double *arr1, double *arr2, int n)
 {
     double *result = (double*) malloc(n * n * sizeof(double));
-    for (int i = 0; i < n * n; i++)
+    for (i = 0; i < n * n; i++)
         result[i] = arr1[i] + arr2[i];
 
     return result;
@@ -29,7 +31,7 @@ double* plus_arr(double *arr1, double *arr2, int n)
 double* minus_arr(double *arr1, double *arr2, int n)
 {
     double *result = (double*) malloc(n * n * sizeof(double));
-    for (int i = 0; i < n * n; i++)
+    for (i = 0; i < n * n; i++)
         result[i] = arr1[i] - arr2[i];
 
     return result;
@@ -38,11 +40,11 @@ double* minus_arr(double *arr1, double *arr2, int n)
 double* multiply_arr(double *arr1, double *arr2, int n)
 {
     double *result = (double*) malloc(n * n * sizeof(double));
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
         {
             double sum = 0.0;
-            for (int k = 0; k < n; k++)
+            for (k = 0; k < n; k++)
                 sum += arr1[i*n + k] * arr2[k*n + j];
             result[i*n + j] = sum;
         }
