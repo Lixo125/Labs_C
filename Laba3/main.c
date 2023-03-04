@@ -9,7 +9,13 @@ int main()
     scanf("%s", str);
 
     for (i = 0; i < 80; i++)
-        str[i] = toupper(str[i]);
+    {
+        if (str[i] == 'a')
+            str[i] = 'A';
+        else if (str[i] == 'b')
+            str[i] = 'B';
+    }
+
     printf(str);
 
     return 0;
