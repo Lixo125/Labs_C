@@ -1,66 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int i, j, k;
-
-void read_arr(double *arr, int n)
-{
-    for (i = 0; i < n * n; i++)
-        scanf("%lf", &arr[i]);
-}
-
-void print_arr(double *arr, int n)
-{
-    for (i = 0; i < n * n; i++)
-    {
-        printf("%3g\t ", arr[i]);
-        if ((i + 1) % n == 0)
-            printf("\n");
-    }
-}
-
-double* plus_arr(double *arr1, double *arr2, int n)
-{
-    double *result = (double*) malloc(n * n * sizeof(double));
-    for (i = 0; i < n * n; i++)
-        result[i] = arr1[i] + arr2[i];
-
-    return result;
-}
-
-double* minus_arr(double *arr1, double *arr2, int n)
-{
-    double *result = (double*) malloc(n * n * sizeof(double));
-    for (i = 0; i < n * n; i++)
-        result[i] = arr1[i] - arr2[i];
-
-    return result;
-}
-
-double* multiply_arr(double *arr1, double *arr2, int n)
-{
-    double *result = (double*) malloc(n * n * sizeof(double));
-    for (i = 0; i < n; i++)
-        for (j = 0; j < n; j++)
-        {
-            double sum = 0.0;
-            for (k = 0; k < n; k++)
-                sum += arr1[i*n + k] * arr2[k*n + j];
-            result[i*n + j] = sum;
-        }
-    return result;
-}
+#include "func.h"
 
 int main() {
-    int n;
-    double *arr1, *arr2, *result;
+    int n, i;
     char operation;
-
+    double **arr1, **arr2, **result;
     printf("Enter the value of n: ");
     scanf("%d", &n);
 
-    arr1 = (double*) malloc(n * n * sizeof(double));
-    arr2 = (double*) malloc(n * n * sizeof(double));
+    arr1= (double**) malloc (sizeof (double*) * n);
+    for (int i = 0; i < n; i++)
+        arr1[i] = (double*) malloc (sizeof (double)*n);
+
+    arr2= (double**) malloc (sizeof (double*) * n);
+    for (int i = 0; i < n; i++)
+        arr2[i] = (double*) malloc (sizeof (double)*n);
 
     printf("Enter values for matrix1:\n");
     read_arr(arr1, n);
@@ -87,9 +42,16 @@ int main() {
     printf("Result:\n");
     print_arr(result, n);
 
+    for(i = 0; i < n; i++)
+        free(arr1[i]);
     free(arr1);
+    for(i = 0; i < n; i++)
+        free(arr2[i]);
     free(arr2);
+    for(i = 0; i < n; i++)
+        free(result[i]);
     free(result);
+
     return 0;
 
 }

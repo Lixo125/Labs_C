@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
-1677763102 source:c:\c\labs_c\laba5\main.c
+1677913957 source:c:\c\labs_c\laba5\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1677913170 c:\c\labs_c\laba5\func.h
 	<stdio.h>
 	<stdlib.h>
 
