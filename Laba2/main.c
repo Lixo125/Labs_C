@@ -12,7 +12,7 @@ int main()
     printf("Zadayte elementi massiva(double):\n");
     for (i = 0; i < n; i++)
         for (j = 0; j < n; j++)
-            scanf("%lf", &arr[i][j]);
+      1      scanf("%lf", &arr[i][j]);
 
     printf("\n");
 
