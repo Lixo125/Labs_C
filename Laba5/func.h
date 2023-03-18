@@ -56,8 +56,10 @@ double** multiply_arr(double **arr1, double **arr2, int n)
 
     for (i = 0; i < n; i++)
         for (j = 0; j < n; j++)
+        {
+            result[i][j] = 0;
             for (k = 0; k < n; k++)
                 result[i][j] += arr1[i][k] * arr2[k][j];
-
+        }
     return result;
 }
