@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1680581933 source:c:\c\labs_c\laba10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<float.h>
+

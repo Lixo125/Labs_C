@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1683893026 source:c:\c\labs_c\laba13\main.c
+	<stdio.h>
+	<signal.h>
+	<stdlib.h>
+	<unistd.h>
+

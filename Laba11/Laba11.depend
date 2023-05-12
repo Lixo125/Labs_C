@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1683904335 source:c:\c\labs_c\laba11\main.c
+	"func.h"
+	<stdio.h>
+
+1683904327 c:\c\labs_c\laba11\func.h
+	<stdarg.h>
+

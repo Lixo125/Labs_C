@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1683888269 source:c:\c\labs_c\laba14\main.c
+	<stdio.h>
+	<setjmp.h>
+
